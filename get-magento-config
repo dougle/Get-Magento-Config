@@ -1,0 +1,17 @@
+#!/usr/bin/php
+<?php
+/*
+
+  A script to peak into the magento config for a specified store and get a certain config entry
+*/
+
+require_once(realpath(dirname(dirname(__FILE__))."/app/Mage.php"));
+
+if(is_null(@$argv[1]) || ''==@$argv[1]){
+  echo 'Usage: '.__FILE__.' "path/to/config" [int store_id]'."\n";
+  exit;
+}
+
+echo Mage::getStoreConfig(@$argv[1], intval(@$argv[2]));
+exit(0);
+?>

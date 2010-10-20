@@ -1,0 +1,18 @@
+A quick script to initialise Magento (tested on 1.3.1) and grab a config item.
+
+It'll follow the normal process of config.xml for defaults then to the db for store specific stuff.
+
+
+Install:
+
+Download to a directory in your path
+$ wget http://github.com/dougle/Get-Magento-Config/raw/master/get-magento-config -o /usr/bin/get-magento-config && \
+  chmod +x /usr/bin/get-magento-config
+
+Usage:
+The store id is optional if ommited it'll assume 0
+
+$ get-magento-config "path/to/config" [store_id]
+
+$ get-magento-config "system/log/error_email" 2
+$ get-magento-config "module/section/timeout"
